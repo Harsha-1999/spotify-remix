@@ -1,0 +1,35 @@
+.loading-view-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #181818;
+  height: 1024px;
+  width: 1440px;
+  left: -4946px;
+  top: 2044px;
+  border-radius: 0px;
+}
+
+.loading-image {
+  height: 58px;
+  width: 144.02528381347656px;
+  left: 1.974609375px;
+  top: 2px;
+  border-radius: 0px;
+}
+
+.loading-name {
+  font-family: 'Assistant';
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: 0em;
+  text-align: center;
+  height: 52px;
+  width: 176px;
+  left: 632px;
+  top: 525px;
+  border-radius: null;
+}

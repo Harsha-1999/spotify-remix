@@ -1,0 +1,27 @@
+.editor-item {
+  display: flex;
+  flex-direction: column;
+  margin-right: 42px;
+  margin-top: 32px;
+}
+
+.editor-image {
+  height: 166px;
+  width: 166px;
+  left: 0px;
+  top: 160px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.editor-name {
+  font-family: 'Assistant';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #f8fafc;
+  width: 166px;
+}

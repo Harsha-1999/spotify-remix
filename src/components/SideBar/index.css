@@ -1,0 +1,123 @@
+.nav-bar-container {
+  height: 1024px;
+  width: 98px;
+  left: 0px;
+  top: 0px;
+  border-radius: 0px;
+  background-color: #040306;
+}
+
+.side-bar-spotify-logo {
+  height: 28.592941284179688px;
+  width: 75.93372344970703px;
+  left: 4.06640625px;
+  top: 2.4072265625px;
+  border-radius: 0px;
+  margin-bottom: 304px;
+  margin-top: 25px;
+}
+
+.unordered-elements {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  height: 70px;
+  width: 98px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -48px;
+}
+
+.side-bar-logo {
+  height: 21px;
+  width: 28.5px;
+  left: 4.5px;
+  top: 9px;
+  border-radius: 0px;
+  color: #9b9b9b;
+  margin-left: 10px;
+}
+
+.sidebar-label {
+  font-family: 'Assistant';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #9b9b9b;
+  border-radius: 0px;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.button {
+  background-color: transparent;
+  border-width: 0px;
+  border-color: #040306;
+  width: 98px;
+  height: 70px;
+}
+
+.active-button {
+  color: #ffffff;
+  border-left: 6px solid #1db954;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-bar-container {
+    display: none;
+  }
+
+  .mobile-nav-bar {
+    height: 56px;
+    width: 100%;
+    background-color: #040306;
+  }
+
+  .mobile-navbar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .navbar-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style-type: none;
+  }
+
+  .nav-button {
+    color: #ffffff;
+    background-color: transparent;
+    height: 40px;
+    width: 40px;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    margin: 10px;
+  }
+
+  .ham-icon {
+    font-size: 30px;
+  }
+
+  .side-bar-spotify-logo {
+    height: 20.79486846923828px;
+    width: 59.26534652709961px;
+    left: 3.173583984375px;
+    top: 1.75048828125px;
+    border-radius: 0px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-nav-bar {
+    display: none;
+  }
+}

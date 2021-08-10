@@ -1,0 +1,145 @@
+.profile-page-container {
+  height: 1024px;
+  width: 100vw;
+  left: 0px;
+  top: 0px;
+  border-radius: 0px;
+  background: #181818;
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.image-container {
+  height: 150px;
+  width: 150px;
+  border-radius: 75px;
+  border: 2px solid #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-image {
+  width: 50%;
+  border-radius: 0px;
+  color: #ffffff;
+}
+
+.username {
+  height: 63px;
+  width: 228px;
+  border-radius: 0px;
+  font-family: 'Assistant';
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 63px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #ffffff;
+}
+
+.counts-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.follower-count {
+  height: 17px;
+  width: 17px;
+  border-radius: null;
+  font-family: 'Lato';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #1db954;
+}
+
+.playlists-count {
+  height: 17px;
+  width: 17px;
+  border-radius: null;
+  font-family: 'Lato';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-left: 88px;
+  color: #1db954;
+}
+
+.profile-followers {
+  height: 18px;
+  width: 78px;
+  border-radius: null;
+  font-family: 'Assistant';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #9b9b9b;
+}
+
+.profile-playlists {
+  height: 18px;
+  width: 67px;
+  border-radius: null;
+  font-family: 'Assistant';
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: #9b9b9b;
+  margin-left: 32px;
+}
+
+.logout-btn {
+  left: 0px;
+  top: 0px;
+  border-radius: 8px;
+  background-color: transparent;
+  font-family: Lato;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+}
+
+.user-info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+}
+
+@media (max-width: 768px) {
+  .profile-page-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+  }
+}

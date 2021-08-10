@@ -1,0 +1,48 @@
+.playlist-page-item {
+  height: 166px;
+  width: 166px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 32px;
+  margin-right: 42px;
+  align-items: center;
+}
+
+.playlist-page-movie-poster {
+  height: 166px;
+  width: 166px;
+  left: 130px;
+  top: 159px;
+  border-radius: 4px;
+}
+
+.playlist-name {
+  height: 26px;
+  width: 57px;
+  border-radius: null;
+  font-family: 'Assistant';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: 0px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 17px;
+  margin-bottom: 4px;
+  width: 166px;
+}
+
+.tracks-count {
+  font-family: 'Assistant';
+  font-size: 18px;
+  font-style: normal;
+  line-height: 24px;
+  letter-spacing: 0em;
+  text-align: center;
+  height: 24px;
+  width: 72px;
+  border-radius: null;
+  color: #64748b;
+  width: 160px;
+}

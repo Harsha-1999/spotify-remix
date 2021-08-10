@@ -1,0 +1,27 @@
+.new-release-item {
+  display: flex;
+  flex-direction: column;
+  margin-right: 42px;
+  margin-top: 32px;
+}
+
+.movie-poster {
+  height: 166px;
+  width: 166px;
+  left: 130px;
+  top: 1464px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.movie-name {
+  font-family: 'Assistant';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #f8fafc;
+  width: 166px;
+}

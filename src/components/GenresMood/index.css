@@ -1,0 +1,105 @@
+.genre-item {
+  height: 166px;
+  width: 166px;
+  left: 0px;
+  top: 0px;
+  border-radius: 8px;
+  margin-right: 42px;
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.genre-name {
+  position: absolute;
+  font-family: 'Assistant';
+  font-style: normal;
+  font-size: 20px;
+  line-height: 26px;
+  color: #f8fafc;
+  text-align: left;
+  margin-top: 12px;
+  margin-left: 12px;
+}
+
+.genre-image {
+  height: 99.99999971533455px;
+  width: 99.99999971533455px;
+  border-radius: 0px;
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 75px;
+  transform: rotate(12.18deg);
+}
+
+.bg-1 {
+  background-color: #ec6d45;
+}
+
+.bg-2 {
+  background-color: #e39c40;
+}
+
+.bg-3 {
+  background-color: #44b844;
+}
+
+.bg-4 {
+  background-color: #4b5b63;
+}
+
+.bg-5 {
+  background-color: #d8383b;
+}
+
+.bg-6 {
+  background-color: #7f5fff;
+}
+
+.bg-7 {
+  background-color: #3965c5;
+}
+
+.bg-8 {
+  background-color: #9eb8c6;
+}
+
+.bg-9 {
+  background-color: #3aadc9;
+}
+
+.bg-10 {
+  background-color: #8abf3d;
+}
+
+.bg-11 {
+  background-color: #4840ca;
+}
+
+.bg-12 {
+  background-color: #006369;
+}
+
+.bg-13 {
+  background-color: #d28935;
+}
+
+.bg-14 {
+  background-color: #8635cf;
+}
+
+.bg-15 {
+  background-color: #34c598;
+}
+
+.bg-16 {
+  background-color: #c73555;
+}
+
+.bg-17 {
+  background-color: #ac3eba;
+}
+
+.bg-18 {
+  background-color: #279653;
+}
