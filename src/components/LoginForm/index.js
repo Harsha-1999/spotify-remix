@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import Cookies from 'js-cookie'
 
 import './index.css'
 
@@ -12,7 +13,7 @@ class LoginForm extends Component {
       this.postHashKeyAsMessage(hashKey)
     }
 
-    this.getMessageAndsetAccessTokenInLocalStorage()
+    this.getMessageAndsetAccessTokenInCookies()
   }
 
   getHashKeyFromLocationAfterLogin = () => {
@@ -50,17 +51,16 @@ class LoginForm extends Component {
     window.close()
   }
 
-  getMessageAndsetAccessTokenInLocalStorage = () => {
+  getMessageAndsetAccessTokenInCookies = () => {
     window.addEventListener(
       'message',
       event => {
         const hash = JSON.parse(event.data)
         if (hash.type === 'access_token') {
-          localStorage.setItem('pa_token', hash.access_token)
-          localStorage.setItem(
-            'pa_expires',
-            new Date().getTime() + (hash.expires_in || 60),
-          )
+          const oneHour = new Date(new Date().getTime() + 60 * 60 * 1000)
+          Cookies.set('pa_token', hash.access_token, {
+            expires: oneHour,
+          })
           window.location.replace('/')
         }
       },
