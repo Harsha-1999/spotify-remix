@@ -1,10 +1,12 @@
 import {Component} from 'react'
+import Cookies from 'js-cookie'
 import PlaylistItem from '../PlaylistItem'
 import SideBar from '../SideBar'
+import Loader from '../Loader'
 import './index.css'
 
 class Playlists extends Component {
-  state = {userDetails: {}, playlistsDetails: []}
+  state = {userDetails: {}, playlistsDetails: [], isLoading: true}
 
   componentDidMount() {
     this.getUserInfo()
@@ -20,11 +22,10 @@ class Playlists extends Component {
 
   getUserInfo = async () => {
     const apiUrl = 'https://api.spotify.com/v1/me'
-    const jwtToken =
-      'BQArmAomBQqA9jYw8yhQLnAlz804BhPGdZP5F458AiQaYHHyH8IIcstxAGKXeEXNmbkw4F25nass4UE7PdERTmCwDUsgKDHOcEP5m9YHwd0sE-GelFzCTO2Xvzi1VO1uuxYZFuXWHnPV_QeOCioWXaierCDSQCOLv90H_ebPiR4CotB3Z76x2fUKJANqlFXwyusjRsYcDgx_EVEe1wNnNpujoC_hU1nfWN7zyGpUcTv-6fxnJph4ZcYoIVcRmE6sNTA-3XtDv7r0EMhvQg'
+    const token = Cookies.get('pa_token')
     const options = {
       headers: {
-        Authorization: `Bearer ${jwtToken}`,
+        Authorization: `Bearer ${token}`,
       },
       method: 'GET',
     }
@@ -39,13 +40,12 @@ class Playlists extends Component {
     const username = '	rlpkiixmmwq9sgvu834xy5ex2'
 
     const playlistsUrl = `https://api.spotify.com/v1/users/${username}/playlists?limit=50`
-    const jwtToken =
-      'BQArmAomBQqA9jYw8yhQLnAlz804BhPGdZP5F458AiQaYHHyH8IIcstxAGKXeEXNmbkw4F25nass4UE7PdERTmCwDUsgKDHOcEP5m9YHwd0sE-GelFzCTO2Xvzi1VO1uuxYZFuXWHnPV_QeOCioWXaierCDSQCOLv90H_ebPiR4CotB3Z76x2fUKJANqlFXwyusjRsYcDgx_EVEe1wNnNpujoC_hU1nfWN7zyGpUcTv-6fxnJph4ZcYoIVcRmE6sNTA-3XtDv7r0EMhvQg'
+    const token = Cookies.get('pa_token')
     const options = {
-      method: 'GET',
       headers: {
-        Authorization: `Bearer ${jwtToken}`,
+        Authorization: `Bearer ${token}`,
       },
+      method: 'GET',
     }
     const response = await fetch(playlistsUrl, options)
     const playlistData = await response.json()
@@ -57,10 +57,10 @@ class Playlists extends Component {
       imageUrl3: eachPlaylist.images[2].url,
       count: eachPlaylist.tracks.total,
     }))
-    this.setState({playlistsDetails: ownPlaylistsData})
+    this.setState({playlistsDetails: ownPlaylistsData, isLoading: false})
   }
 
-  render() {
+  renderPlaylistPage = () => {
     const {playlistsDetails} = this.state
 
     return (
@@ -76,6 +76,11 @@ class Playlists extends Component {
         </div>
       </div>
     )
+  }
+
+  render() {
+    const {isLoading} = this.state
+    return isLoading ? <Loader /> : this.renderPlaylistPage()
   }
 }
 

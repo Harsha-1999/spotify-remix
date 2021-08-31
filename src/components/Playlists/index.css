@@ -17,7 +17,6 @@
 }
 
 .playlists-page-main-heading {
-  position: absolute;
   font-family: 'Assistant';
   font-style: normal;
   font-weight: 800;
@@ -33,4 +32,5 @@
   flex-direction: row;
   flex-wrap: wrap;
   list-style-type: none;
+  margin-top: 0px;
 }

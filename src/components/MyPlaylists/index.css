@@ -1,0 +1,17 @@
+.my-playlists-page-container {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  width: 100vw;
+  left: 0px;
+  top: 0px;
+  background: #181818;
+}
+
+.myplaylists-content-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 32px;
+  height: 90vh;
+  overflow-y: scroll;
+}

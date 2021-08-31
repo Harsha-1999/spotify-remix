@@ -7,6 +7,9 @@ import YourMusic from './components/YourMusic'
 import Playlists from './components/Playlists'
 import PlaylistsItemDetails from './components/PlaylistsItemDetails'
 import CategoriesList from './components/CategoriesList'
+import NewReleasesAlbumSongs from './components/NewReleasesAlbumSongs'
+import PodcastDetailsPage from './components/PodcastDetailsPage'
+import MyPlaylists from './components/MyPlaylists'
 
 import './App.css'
 
@@ -24,6 +27,17 @@ const App = () => (
         path="/playlists/:id"
         component={PlaylistsItemDetails}
       />
+      <ProtectedRoute
+        exact
+        path="/newreleases/:id"
+        component={NewReleasesAlbumSongs}
+      />
+      <ProtectedRoute
+        exact
+        path="/podcasts/:id"
+        component={PodcastDetailsPage}
+      />
+      <ProtectedRoute exact path="/myplaylists/:id" component={MyPlaylists} />
     </Switch>
   </BrowserRouter>
 )

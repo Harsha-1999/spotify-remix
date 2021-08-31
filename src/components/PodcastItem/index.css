@@ -1,0 +1,18 @@
+.podcast-song-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.podcast-song-list {
+  font-family: 'Assistant';
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #ffffff;
+  width: 250px;
+  margin-right: 10px;
+}

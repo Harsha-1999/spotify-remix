@@ -1,5 +1,5 @@
 .nav-bar-container {
-  height: 1024px;
+  height: 100vh;
   width: 98px;
   left: 0px;
   top: 0px;
@@ -13,7 +13,7 @@
   left: 4.06640625px;
   top: 2.4072265625px;
   border-radius: 0px;
-  margin-bottom: 304px;
+  margin-bottom: 165px;
   margin-top: 25px;
 }
 

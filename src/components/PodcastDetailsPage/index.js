@@ -1,33 +1,34 @@
-import {Component} from 'react'
+import {Link} from 'react-router-dom'
 
 import Cookies from 'js-cookie'
 
-import {Link} from 'react-router-dom'
-
+import {Component} from 'react'
 import {MdArrowBack} from 'react-icons/md'
-import SideBar from '../SideBar'
-import DisplaySongs from '../DisplaySongs'
-import Loader from '../Loader'
+
+import Sidebar from '../SideBar'
+import PodcastItem from '../PodcastItem'
 import MediaPlayer from '../MediaPlayer'
+import Loader from '../Loader'
 
 import './index.css'
 
-class PlaylistsItemDetails extends Component {
-  state = {playlistBasicInfo: [], allTracksInfo: [], isLoading: true}
+class PodcastDetailsPage extends Component {
+  state = {podcastImageInfo: [], podcastSongInfo: [], isLoading: true}
 
   componentDidMount() {
-    this.getPlaylistItemDetails()
+    this.getMusicDetails()
   }
 
-  getBasicInfo = data => ({
+  getBasicImageInfo = data => ({
     description: data.description,
     followersCount: data.followers.total,
     id: data.id,
     image: data.images[0].url,
     name: data.name,
+    tracksCount: data.tracks.total,
   })
 
-  getPlaylistItemDetails = async () => {
+  getMusicDetails = async () => {
     const {match} = this.props
     const {params} = match
     const {id} = params
@@ -41,10 +42,10 @@ class PlaylistsItemDetails extends Component {
       method: 'GET',
     }
     const response = await fetch(apiUrl, options)
-    const playlistListItemData = await response.json()
-    console.log(playlistListItemData)
-    const basicInfo = this.getBasicInfo(playlistListItemData)
-    const tracksInfo = playlistListItemData.tracks.items.map(eachTrack => ({
+    const podcastSongsDetails = await response.json()
+    console.log(podcastSongsDetails)
+    const basicInfo = this.getBasicImageInfo(podcastSongsDetails)
+    const tracksInfo = podcastSongsDetails.tracks.items.map(eachTrack => ({
       addedAt: eachTrack.added_at,
       artist: eachTrack.track.artists[0].name,
       id: eachTrack.track.id,
@@ -55,19 +56,19 @@ class PlaylistsItemDetails extends Component {
       trackNumber: eachTrack.track.track_number,
     }))
     this.setState({
-      playlistBasicInfo: basicInfo,
-      allTracksInfo: tracksInfo,
+      podcastImageInfo: basicInfo,
+      podcastSongInfo: tracksInfo,
       isLoading: false,
     })
   }
 
-  renderPlaylistItemDetails = () => {
-    const {playlistBasicInfo, allTracksInfo} = this.state
+  renderPodcastMusicList = () => {
+    const {podcastImageInfo, podcastSongInfo} = this.state
     return (
-      <div className="playlist-page-details">
-        <SideBar />
-        <div>
-          <div className="playlist-page-content-container">
+      <div className="podcast-page-container">
+        <Sidebar />
+        <div className="media-player-page">
+          <div className="podcast-playlist-details-container">
             <Link to="/">
               <button className="back-icon-container" type="button">
                 <MdArrowBack className="back-icon" />
@@ -76,18 +77,21 @@ class PlaylistsItemDetails extends Component {
             </Link>
             <div className="playlists-page-image-text-container">
               <img
-                src={playlistBasicInfo.image}
+                src={podcastImageInfo.image}
                 alt="playlist-poster"
                 className="playlist-page-poster"
               />
               <div>
-                <p className="playlists-page-sub-heading">Editors picks</p>
+                <p className="playlists-page-sub-heading">#podcasts</p>
+                <p className="tracks-count">
+                  {podcastImageInfo.tracksCount} Tracks
+                </p>
                 <h1 className="playlists-page-heading">
-                  {playlistBasicInfo.name}
+                  {podcastImageInfo.name}
                 </h1>
               </div>
             </div>
-            <ol className="ordered-list">
+            <ol className="new-ordered-list">
               <li className="tracks-list-name-container">
                 <p className="songs-headings">Track</p>
                 <p className="songs-headings">Album</p>
@@ -96,12 +100,11 @@ class PlaylistsItemDetails extends Component {
                 <p className="songs-headings">Added</p>
               </li>
               <hr className="horizontal-line" />
-              {allTracksInfo.map(eachTrack => (
-                <DisplaySongs listDetails={eachTrack} key={eachTrack.id} />
+              {podcastSongInfo.map(eachTrack => (
+                <PodcastItem podcastDetails={eachTrack} key={eachTrack.id} />
               ))}
             </ol>
           </div>
-          <MediaPlayer />
         </div>
       </div>
     )
@@ -109,8 +112,8 @@ class PlaylistsItemDetails extends Component {
 
   render() {
     const {isLoading} = this.state
-    return isLoading ? <Loader /> : this.renderPlaylistItemDetails()
+    return isLoading ? <Loader /> : this.renderPodcastMusicList()
   }
 }
 
-export default PlaylistsItemDetails
+export default PodcastDetailsPage

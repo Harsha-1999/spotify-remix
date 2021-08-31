@@ -81,10 +81,10 @@ class LoginForm extends Component {
   getRedirectURL = () => {
     if (this.isDevelopmentEnvironment()) {
       /* ADD THIS URL to your Application Redirect URIs to redirect after authentication success OR failure */
-      return 'http://localhost:3000/'
+      return 'http://localhost:3000/login'
     }
     /* Change this redirectURL accordingly before publishing your project and ADD THIS URL to your Application Redirect URIs to redirect after authentication success OR failure */
-    return 'https://sample.ccpb.tech/login'
+    return 'https://sample.ccbp.tech/login'
   }
 
   openLoginModal = () => {

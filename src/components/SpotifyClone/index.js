@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import Cookies from 'js-cookie'
 import moment from 'moment'
 
 import NewReleases from '../NewReleases'
@@ -34,11 +35,10 @@ class SpotifyClone extends Component {
 
   getUserInfo = async () => {
     const apiUrl = 'https://api.spotify.com/v1/me'
-    const jwtToken =
-      'BQArmAomBQqA9jYw8yhQLnAlz804BhPGdZP5F458AiQaYHHyH8IIcstxAGKXeEXNmbkw4F25nass4UE7PdERTmCwDUsgKDHOcEP5m9YHwd0sE-GelFzCTO2Xvzi1VO1uuxYZFuXWHnPV_QeOCioWXaierCDSQCOLv90H_ebPiR4CotB3Z76x2fUKJANqlFXwyusjRsYcDgx_EVEe1wNnNpujoC_hU1nfWN7zyGpUcTv-6fxnJph4ZcYoIVcRmE6sNTA-3XtDv7r0EMhvQg'
+    const token = Cookies.get('pa_token')
     const options = {
       headers: {
-        Authorization: `Bearer ${jwtToken}`,
+        Authorization: `Bearer ${token}`,
       },
       method: 'GET',
     }
@@ -53,14 +53,12 @@ class SpotifyClone extends Component {
     const country = 'IN'
     const timeStamp = moment(new Date()).format('YYYY-MM-DDTHH:00:00')
     const musicUrl = `https://api.spotify.com/v1/browse/featured-playlists?country=${country}&timestamp=${timeStamp}`
-    const jwtToken =
-      'BQArmAomBQqA9jYw8yhQLnAlz804BhPGdZP5F458AiQaYHHyH8IIcstxAGKXeEXNmbkw4F25nass4UE7PdERTmCwDUsgKDHOcEP5m9YHwd0sE-GelFzCTO2Xvzi1VO1uuxYZFuXWHnPV_QeOCioWXaierCDSQCOLv90H_ebPiR4CotB3Z76x2fUKJANqlFXwyusjRsYcDgx_EVEe1wNnNpujoC_hU1nfWN7zyGpUcTv-6fxnJph4ZcYoIVcRmE6sNTA-3XtDv7r0EMhvQg'
-
+    const token = Cookies.get('pa_token')
     const options = {
-      method: 'GET',
       headers: {
-        Authorization: `Bearer ${jwtToken}`,
+        Authorization: `Bearer ${token}`,
       },
+      method: 'GET',
     }
 
     const response = await fetch(musicUrl, options)
@@ -78,13 +76,12 @@ class SpotifyClone extends Component {
 
   getGenreAndMoods = async () => {
     const genresUrl = 'https://api.spotify.com/v1/browse/categories'
-    const jwtToken =
-      'BQArmAomBQqA9jYw8yhQLnAlz804BhPGdZP5F458AiQaYHHyH8IIcstxAGKXeEXNmbkw4F25nass4UE7PdERTmCwDUsgKDHOcEP5m9YHwd0sE-GelFzCTO2Xvzi1VO1uuxYZFuXWHnPV_QeOCioWXaierCDSQCOLv90H_ebPiR4CotB3Z76x2fUKJANqlFXwyusjRsYcDgx_EVEe1wNnNpujoC_hU1nfWN7zyGpUcTv-6fxnJph4ZcYoIVcRmE6sNTA-3XtDv7r0EMhvQg'
+    const token = Cookies.get('pa_token')
     const options = {
-      method: 'GET',
       headers: {
-        Authorization: `Bearer ${jwtToken}`,
+        Authorization: `Bearer ${token}`,
       },
+      method: 'GET',
     }
     const response = await fetch(genresUrl, options)
     if (response.ok === true) {
@@ -103,13 +100,12 @@ class SpotifyClone extends Component {
     const {userCountryDetails} = this.state
     const country = 'IN'
     const newReleaseUrl = `https://api.spotify.com/v1/browse/new-releases?country=${country}`
-    const jwtToken =
-      'BQArmAomBQqA9jYw8yhQLnAlz804BhPGdZP5F458AiQaYHHyH8IIcstxAGKXeEXNmbkw4F25nass4UE7PdERTmCwDUsgKDHOcEP5m9YHwd0sE-GelFzCTO2Xvzi1VO1uuxYZFuXWHnPV_QeOCioWXaierCDSQCOLv90H_ebPiR4CotB3Z76x2fUKJANqlFXwyusjRsYcDgx_EVEe1wNnNpujoC_hU1nfWN7zyGpUcTv-6fxnJph4ZcYoIVcRmE6sNTA-3XtDv7r0EMhvQg'
+    const token = Cookies.get('pa_token')
     const options = {
-      method: 'GET',
       headers: {
-        Authorization: `Bearer ${jwtToken}`,
+        Authorization: `Bearer ${token}`,
       },
+      method: 'GET',
     }
     const response = await fetch(newReleaseUrl, options)
     if (response.ok === true) {

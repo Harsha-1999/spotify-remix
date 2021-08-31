@@ -1,4 +1,6 @@
+import {Redirect} from 'react-router-dom'
 import {Component} from 'react'
+import Cookies from 'js-cookie'
 import SideBar from '../SideBar'
 
 import './index.css'
@@ -19,11 +21,10 @@ class Profile extends Component {
 
   getUserInfo = async () => {
     const apiUrl = 'https://api.spotify.com/v1/me'
-    const jwtToken =
-      'BQArmAomBQqA9jYw8yhQLnAlz804BhPGdZP5F458AiQaYHHyH8IIcstxAGKXeEXNmbkw4F25nass4UE7PdERTmCwDUsgKDHOcEP5m9YHwd0sE-GelFzCTO2Xvzi1VO1uuxYZFuXWHnPV_QeOCioWXaierCDSQCOLv90H_ebPiR4CotB3Z76x2fUKJANqlFXwyusjRsYcDgx_EVEe1wNnNpujoC_hU1nfWN7zyGpUcTv-6fxnJph4ZcYoIVcRmE6sNTA-3XtDv7r0EMhvQg'
+    const token = Cookies.get('pa_token')
     const options = {
       headers: {
-        Authorization: `Bearer ${jwtToken}`,
+        Authorization: `Bearer ${token}`,
       },
       method: 'GET',
     }

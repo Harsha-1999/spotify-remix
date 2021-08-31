@@ -6,6 +6,7 @@
   margin-top: 32px;
   margin-right: 42px;
   align-items: center;
+  justify-content: center;
 }
 
 .playlist-page-movie-poster {
@@ -45,4 +46,5 @@
   border-radius: null;
   color: #64748b;
   width: 160px;
+  margin-left: 60px;
 }

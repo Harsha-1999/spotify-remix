@@ -1,4 +1,4 @@
-.playlist-page-details {
+.newreleases-specific-album-container {
   display: flex;
   flex-direction: row;
   position: absolute;
@@ -8,57 +8,27 @@
   background: #181818;
 }
 
-.playlist-page-content-container {
+.newrelease-page-content {
   display: flex;
   flex-direction: column;
   margin-left: 32px;
-  height: 90vh;
-  overflow-y: scroll;
 }
 
-.back-icon {
-  height: 24px;
-  width: 24px;
-  left: 0px;
-  top: 0px;
-  border-radius: 0px;
-  color: #ffffff;
-  margin-right: 4px;
-}
-
-.back-icon-container {
-  display: flex;
-  flex-direction: row;
-  margin-top: 20px;
-  margin-left: 32px;
-}
-
-.back-text {
-  color: #ffffff;
-  font-family: 'Assistant';
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: 0px;
-  margin-top: 0px;
-}
-
-.playlists-page-image-text-container {
+.newrelease-page-image-container {
   display: flex;
   flex-direction: row;
   margin-top: 24px;
   margin-left: 32px;
 }
 
-.playlist-page-poster {
+.newreleases-page-poster {
   height: 295px;
   width: 295px;
   border-radius: 8px;
   margin-right: 24px;
 }
 
-.playlists-page-sub-heading {
+.newreleases-page-sub-heading {
   font-family: 'Assistant';
   font-size: 16px;
   font-style: normal;
@@ -71,10 +41,10 @@
   top: 208px;
   border-radius: null;
   color: #ffffff;
-  margin-top: 130px;
+  margin-top: 0px;
 }
 
-.playlists-page-heading {
+.newreleases-page-heading {
   font-family: 'Assistant';
   font-size: 70px;
   font-style: normal;
@@ -89,13 +59,31 @@
   margin-top: 0px;
 }
 
-.tracks-list-name-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+.newreleases-page-artist {
+  font-family: 'Lato';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 19px;
+  letter-spacing: 0px;
+  text-align: left;
+  margin-top: 0px;
+  padding-top: 0px;
+  color: #ffffff;
 }
 
-.songs-headings {
+.orderedlist-newrelease {
+  list-style-type: decimal;
+}
+
+.new-releases-list-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 100px;
+}
+
+.new-heading {
   font-family: 'Assistant';
   font-size: 16px;
   font-style: normal;
@@ -103,24 +91,14 @@
   line-height: 21px;
   letter-spacing: 0px;
   text-align: left;
-  color: #f8fafc;
+  color: #ffffff;
   width: 250px;
-  margin-right: 10px;
 }
 
 .horizontal-line {
-  width: 100vw;
+  width: 1000px;
   height: 0px;
   left: 130px;
+  top: 436px;
   border: 1px solid #475569;
-}
-
-.ordered-list {
-  list-style-type: decimal;
-  color: #ffffff;
-}
-
-.media-player-page {
-  display: flex;
-  flex-direction: column;
 }
